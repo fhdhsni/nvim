@@ -23,7 +23,7 @@ local plugins = {
     end,
   },
 
-  ["NvChad/ui"] = {
+  ["fhdhsni/ui"] = {
     after = "base46",
     config = function()
       local present, nvchad_ui = pcall(require, "nvchad_ui")
@@ -182,6 +182,7 @@ local plugins = {
   },
 
   ["nvim-telescope/telescope.nvim"] = {
+    tag = "0.1.0",
     cmd = "Telescope",
     config = function()
       require "plugins.configs.telescope"
@@ -193,7 +194,7 @@ local plugins = {
 
   -- Only load whichkey after all the gui
   ["folke/which-key.nvim"] = {
-    disable = true,
+    disable = false,
     module = "which-key",
     keys = "<leader>",
     config = function()
@@ -203,6 +204,60 @@ local plugins = {
       require("core.utils").load_mappings "whichkey"
     end,
   },
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      local present, null_ls = pcall(require, "null-ls")
+
+      if not present then
+        return
+      end
+
+      local b = null_ls.builtins
+
+      local sources = {
+
+        -- webdev stuff
+        b.formatting.deno_fmt,
+        b.formatting.prettier,
+
+        -- Lua
+        b.formatting.stylua,
+
+        -- Shell
+        b.formatting.shfmt,
+        b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
+      }
+
+      null_ls.setup {
+        debug = true,
+        sources = sources,
+      }
+    end,
+  },
+  ["JoosepAlviste/nvim-ts-context-commentstring"] = {},
+  ["andymass/vim-matchup"] = {},
+  ["windwp/nvim-ts-autotag"] = {},
+  ["ThePrimeagen/harpoon"] = {
+    setup = function()
+      require("core.utils").load_mappings "harpoon"
+    end,
+  },
+  ["nvim-telescope/telescope-fzf-native.nvim"] = {
+    run = "make",
+  },
+  ["kylechui/nvim-surround"] = {
+    tag = "*",
+    config = function()
+      require("nvim-surround").setup {}
+    end,
+  },
+  -- ["ibhagwan/fzf-lua"] = {
+  --   after = "nvim-web-devicons",
+  --   config = function()
+  --     require("fzf-lua").setup {}
+  --   end,
+  -- },
 }
 
 -- Load all plugins

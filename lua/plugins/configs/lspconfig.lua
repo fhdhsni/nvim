@@ -50,6 +50,8 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
+vim.diagnostic.config { virtual_text = false }
+
 lspconfig.sumneko_lua.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
@@ -69,6 +71,26 @@ lspconfig.sumneko_lua.setup {
       },
     },
   },
+}
+
+-- https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#typescript-language-server
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+-- local servers = require("plugins.configs.mason").servers
+local servers = { "tsserver", "tailwindcss" }
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = M.on_attach,
+    capabilities = M.capabilities,
+  }
+end
+
+local home = os.getenv "HOME"
+
+require("lspconfig").elixirls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  cmd = { home .. "/elixir-ls/language_server.sh" },
 }
 
 return M

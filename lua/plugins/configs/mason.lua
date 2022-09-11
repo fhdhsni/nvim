@@ -14,7 +14,13 @@ vim.api.nvim_create_autocmd("Filetype", {
 })
 
 local options = {
-  ensure_installed = { "lua-language-server" }, -- not an option from mason.nvim
+  ensure_installed = {
+    "lua-language-server",
+    "typescript-language-server",
+    "css-lsp",
+    "tailwindcss-language-server",
+    "elixir-ls",
+  }, -- not an option from mason.nvim
 
   ui = {
     icons = {

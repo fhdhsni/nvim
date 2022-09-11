@@ -17,6 +17,7 @@ M.general = {
     ["<C-l>"] = { "<Right>", "move right" },
     ["<C-j>"] = { "<Down>", "move down" },
     ["<C-k>"] = { "<Up>", "move up" },
+    ["<C-c>"] = { "<ESC>", "normal mode" },
   },
 
   n = {
@@ -58,7 +59,7 @@ M.general = {
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
 
     -- new buffer
-    ["<leader>b"] = { "<cmd> enew <CR>", "new buffer" },
+    -- ["<leader>b"] = { "<cmd> enew <CR>", "new buffer" },
 
     -- close buffer + hide terminal buffer
     ["<leader>x"] = {
@@ -66,6 +67,16 @@ M.general = {
         require("core.utils").close_buffer()
       end,
       "close buffer",
+    },
+    ["<localleader>t"] = {
+      function()
+        vim.cmd [[ set showtabline=0 ]]
+      end,
+      "sayign hi",
+    },
+    ["<localleader>f"] = {
+      "<C-^>",
+      "alternative file",
     },
   },
 
@@ -194,7 +205,8 @@ M.lspconfig = {
 
     ["gr"] = {
       function()
-        vim.lsp.buf.references()
+        -- vim.lsp.buf.references()
+        require("telescope.builtin").lsp_references()
       end,
       "lsp references",
     },
@@ -277,7 +289,32 @@ M.telescope = {
     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
     ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
+    ["<leader>b"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
+    ["<leader>a"] = {
+      function()
+        require("telescope.builtin").live_grep { search_dirs = { vim.fn.expand "%:p" } }
+        -- require('telescope.builtin').live_grep({grep_open_files=true})
+
+        -- local actions = require "fzf-lua.actions"
+        -- print(vim.inspect(actions))
+        -- require("fzf-lua").lgrep_curbuf {
+        --   winopts = {
+        --     fullscreen = false,
+        --     split = "belowright new | resize +10",
+        --     preview = {
+        --       -- hidden = 'hidden',
+        --       vertical = "up:45%",
+        --       horizontal = "right:75%",
+        --       layout = "vertical",
+        --       delay = 0,
+        --       winopts = { number = true },
+        --     },
+        --   },
+        -- }
+      end,
+      "grep current file",
+    },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
     ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
@@ -400,6 +437,49 @@ M.blankline = {
       end,
 
       "Jump to current_context",
+    },
+  },
+}
+
+M.harpoon = {
+  plugin = true,
+
+  n = {
+    ["<leader>ss"] = {
+      function()
+        require("harpoon.ui").toggle_quick_menu()
+      end,
+      "Harpoon menu",
+    },
+    ["<leader>sa"] = {
+      function()
+        require("harpoon.mark").add_file()
+      end,
+      "Harpoon menu",
+    },
+    ["<leader>sj"] = {
+      function()
+        require("harpoon.ui").nav_file(1)
+      end,
+      "Harpoon menu",
+    },
+    ["<leader>sk"] = {
+      function()
+        require("harpoon.ui").nav_file(2)
+      end,
+      "Harpoon menu",
+    },
+    ["<leader>sl"] = {
+      function()
+        require("harpoon.ui").nav_file(3)
+      end,
+      "Harpoon menu",
+    },
+    ["<leader>s;"] = {
+      function()
+        require("harpoon.ui").nav_file(4)
+      end,
+      "Harpoon menu",
     },
   },
 }

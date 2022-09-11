@@ -35,8 +35,10 @@ opt.mouse = "a"
 
 -- Numbers
 opt.number = true
+opt.relativenumber = true
 opt.numberwidth = 2
 opt.ruler = false
+opt.scrolloff = 10
 
 -- disable nvim intro
 opt.shortmess:append "sI"
@@ -47,6 +49,7 @@ opt.splitright = true
 opt.termguicolors = true
 opt.timeoutlen = 400
 opt.undofile = true
+opt.guicursor = ''
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
@@ -55,7 +58,8 @@ opt.updatetime = 250
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
 
-g.mapleader = " "
+g.mapleader = ","
+g.maplocalleader = ";"
 
 -- disable some builtin vim plugins
 local default_plugins = {

@@ -9,6 +9,13 @@ require("base46").load_highlight "treesitter"
 local options = {
   ensure_installed = {
     "lua",
+    "html",
+    "css",
+    "tsx",
+    "typescript",
+    "javascript",
+    "json",
+    "elixir",
   },
 
   highlight = {
@@ -18,6 +25,16 @@ local options = {
 
   indent = {
     enable = true,
+  },
+
+  autotag = {
+    enable = true,
+  },
+
+  matchup = {
+    enable = true, -- mandatory, false will disable the whole extension
+    disable = { "c", "ruby" }, -- optional, list of language that will be disabled
+    -- [options]
   },
 }
 
