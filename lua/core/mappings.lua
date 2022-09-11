@@ -293,7 +293,19 @@ M.telescope = {
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
     ["<leader>a"] = {
       function()
-        require("telescope.builtin").live_grep { search_dirs = { vim.fn.expand "%:p" } }
+        require("telescope.builtin").live_grep {
+          -- vimgrep_arguments = {
+          --   "rg",
+          --   "--color=never",
+          --   "--no-heading",
+          --   "--no-filename",
+          --   "--line-number",
+          --   "--column",
+          --   "--smart-case",
+          -- },
+          search_dirs = { vim.fn.expand "%:p" },
+          shorten_path = true,
+        }
         -- require('telescope.builtin').live_grep({grep_open_files=true})
 
         -- local actions = require "fzf-lua.actions"
