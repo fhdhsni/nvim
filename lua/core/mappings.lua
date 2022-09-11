@@ -315,6 +315,12 @@ M.telescope = {
 
     -- theme switcher
     ["<leader>th"] = { "<cmd> Telescope themes <CR>", "nvchad themes" },
+    ["<localleader>r"] = {
+      function()
+        require("telescope.builtin").resume()
+      end,
+      "resume",
+    },
   },
 }
 
