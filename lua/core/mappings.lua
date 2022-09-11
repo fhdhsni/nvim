@@ -294,36 +294,11 @@ M.telescope = {
     ["<leader>a"] = {
       function()
         require("telescope.builtin").live_grep {
-          -- vimgrep_arguments = {
-          --   "rg",
-          --   "--color=never",
-          --   "--no-heading",
-          --   "--no-filename",
-          --   "--line-number",
-          --   "--column",
-          --   "--smart-case",
-          -- },
           search_dirs = { vim.fn.expand "%:p" },
-          shorten_path = true,
+          path_display = "hidden",
+          layout_strategy = "vertical",
+          layout_config = { height = 0.9, width = 0.75, prompt_position = "bottom", preview_cutoff = 40 },
         }
-        -- require('telescope.builtin').live_grep({grep_open_files=true})
-
-        -- local actions = require "fzf-lua.actions"
-        -- print(vim.inspect(actions))
-        -- require("fzf-lua").lgrep_curbuf {
-        --   winopts = {
-        --     fullscreen = false,
-        --     split = "belowright new | resize +10",
-        --     preview = {
-        --       -- hidden = 'hidden',
-        --       vertical = "up:45%",
-        --       horizontal = "right:75%",
-        --       layout = "vertical",
-        --       delay = 0,
-        --       winopts = { number = true },
-        --     },
-        --   },
-        -- }
       end,
       "grep current file",
     },
