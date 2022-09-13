@@ -19,6 +19,11 @@ local plugins = {
 
       if ok then
         base46.load_theme()
+
+        -- vim.cmd [[
+        --     autocmd InsertEnter * highlight CursorLine guifg=white guibg=blue ctermfg=white ctermbg=blue
+        --     autocmd InsertLeave * highlight CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
+        -- ]]
       end
     end,
   },
@@ -252,39 +257,42 @@ local plugins = {
       require("nvim-surround").setup {}
     end,
   },
-  ["edluffy/specs.nvim"] = {
-    config = function()
-      require("specs").setup {
-        show_jumps = true,
-        min_jump = 30,
-        popup = {
-          delay_ms = 150, -- delay before popup displays
-          inc_ms = 100, -- time increments used for fade/resize effects
-          blend = 80, -- starting blend, between 0-100 (fully transparent), see :h winblend
-          width = 40,
-          winhl = "Search",
-          fader = require("specs").linear_fader,
-          resizer = require("specs").shrink_resizer,
-        },
-        ignore_filetypes = {},
-        ignore_buftypes = {
-          nofile = true,
-        },
-      }
-    end,
-  },
   ["ggandor/leap.nvim"] = {
     config = function()
       require("leap").set_default_keymaps()
     end,
   },
   ["RRethy/vim-illuminate"] = {},
-  -- ["ibhagwan/fzf-lua"] = {
-  --   after = "nvim-web-devicons",
-  --   config = function()
-  --     require("fzf-lua").setup {}
-  --   end,
-  -- },
+  ["mvllow/modes.nvim"] = {
+    tag = "v0.2.0",
+    config = function()
+      require("modes").setup {
+        colors = {
+          copy = "#f5c359",
+          delete = "#c75c6a",
+          insert = "#78ccc5",
+          visual = "#9745be",
+        },
+
+        -- Set opacity for cursorline and number background
+        line_opacity = 0.15,
+
+        -- Enable cursor highlights
+        set_cursor = false,
+
+        -- Enable cursorline initially, and disable cursorline for inactive windows
+        -- or ignored filetypes
+        set_cursorline = false,
+
+        -- Enable line number highlights to match cursorline
+        set_number = true,
+
+        -- Disable modes highlights in specified filetypes
+        -- Please PR commonly ignored filetypes
+        ignore_filetypes = { "NvimTree", "TelescopePrompt" },
+      }
+    end,
+  },
 }
 
 -- Load all plugins

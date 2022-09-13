@@ -12,7 +12,11 @@ M.options = {
 M.ui = {
   -- hl = highlights
   hl_add = {},
-  hl_override = {},
+  hl_override = {
+    CursorLine = {
+      bg = "one_bg2"
+    }
+  },
   changed_themes = {},
   theme_toggle = { "onedark", "one_light" },
   theme = "chocolate", -- default theme
