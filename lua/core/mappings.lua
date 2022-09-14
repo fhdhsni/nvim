@@ -304,6 +304,18 @@ M.telescope = {
       end,
       "grep current file",
     },
+    ["<leader>fl"] = {
+      function()
+        require("telescope.builtin").live_grep {
+          search_dirs = { vim.fn.expand "%:p" },
+          path_display = "hidden",
+          layout_strategy = "vertical",
+          layout_config = { height = 0.9, width = 0.75, prompt_position = "bottom", preview_cutoff = 40 },
+          default_text = vim.fn.expand "<cword>",
+        }
+      end,
+      "word under cursor",
+    },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
     ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
