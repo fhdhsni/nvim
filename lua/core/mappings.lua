@@ -18,6 +18,7 @@ M.general = {
     ["<C-j>"] = { "<Down>", "move down" },
     ["<C-k>"] = { "<Up>", "move up" },
     ["<C-c>"] = { "<ESC>", "normal mode" },
+    ["<C-s>"] = { "<ESC>:w<CR>l", "save in insert mode" },
   },
 
   n = {
