@@ -43,12 +43,12 @@ M.general = {
     -- update nvchad
     ["<leader>uu"] = { "<cmd> :NvChadUpdate <CR>", "update nvchad" },
 
-    ["<leader>tt"] = {
-      function()
-        require("base46").toggle_theme()
-      end,
-      "toggle theme",
-    },
+    -- ["<leader>tt"] = {
+    --   function()
+    --     require("base46").toggle_theme()
+    --   end,
+    --   "toggle theme",
+    -- },
 
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
@@ -69,13 +69,13 @@ M.general = {
       end,
       "close buffer",
     },
-    ["<localleader>t"] = {
+    ["<leader>tt"] = {
       function()
         vim.cmd [[ set showtabline=0 ]]
       end,
-      "sayign hi",
+      "hide tabline",
     },
-    ["<localleader>f"] = {
+    ["<leader>pf"] = {
       "<C-^>",
       "alternative file",
     },
@@ -159,7 +159,8 @@ M.lspconfig = {
 
     ["gd"] = {
       function()
-        vim.lsp.buf.definition()
+        -- vim.lsp.buf.definition()
+        require("telescope.builtin").lsp_definitions()
       end,
       "lsp definition",
     },

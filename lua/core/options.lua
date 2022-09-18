@@ -34,7 +34,7 @@ opt.smartcase = true
 opt.mouse = "a"
 
 -- Numbers
-opt.number = true
+opt.number = false
 opt.relativenumber = true
 opt.numberwidth = 2
 opt.ruler = false
