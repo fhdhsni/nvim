@@ -164,6 +164,12 @@ M.lspconfig = {
       end,
       "lsp definition",
     },
+    ["gs"] = {
+      function()
+        require("telescope.builtin").lsp_document_symbols()
+      end,
+      "lsp document symbols",
+    },
 
     ["K"] = {
       function()
