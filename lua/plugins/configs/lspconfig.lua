@@ -76,7 +76,7 @@ lspconfig.sumneko_lua.setup {
 -- https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#typescript-language-server
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 -- local servers = require("plugins.configs.mason").servers
-local servers = { "tsserver", "tailwindcss" }
+local servers = { "tsserver", "tailwindcss", "rust_analyzer" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {

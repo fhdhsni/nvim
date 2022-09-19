@@ -20,6 +20,7 @@ local options = {
     "css-lsp",
     "tailwindcss-language-server",
     "elixir-ls",
+    "rust-analyzer",
   }, -- not an option from mason.nvim
 
   ui = {

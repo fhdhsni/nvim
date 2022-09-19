@@ -14,12 +14,12 @@ M.ui = {
   hl_add = {},
   hl_override = {
     CursorLine = {
-      bg = "one_bg2"
-    }
+      bg = "one_bg2",
+    },
   },
   changed_themes = {},
   theme_toggle = { "onedark", "one_light" },
-  theme = "chocolate", -- default theme
+  theme = "tokyonight", -- default theme
   transparency = false,
 }
 
