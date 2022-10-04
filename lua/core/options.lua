@@ -58,7 +58,7 @@ opt.updatetime = 250
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
 
-g.mapleader = " "
+g.mapleader = ","
 -- g.maplocalleader = ";"
 
 -- disable some builtin vim plugins
