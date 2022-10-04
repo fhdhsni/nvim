@@ -79,6 +79,10 @@ M.general = {
       "<C-^>",
       "alternative file",
     },
+    ["*"] = {
+      "*<C-o>",
+      "highlight current word"
+    }
   },
 
   t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
@@ -104,20 +108,20 @@ M.tabufline = {
 
   n = {
     -- cycle through buffers
-    ["<TAB>"] = {
-      function()
-        require("core.utils").tabuflineNext()
-      end,
-      "goto next buffer",
-    },
-
-    ["<S-Tab>"] = {
-      function()
-        require("core.utils").tabuflinePrev()
-      end,
-      "goto prev buffer",
-    },
-
+    -- ["<TAB>"] = {
+    --   function()
+    --     require("core.utils").tabuflineNext()
+    --   end,
+    --   "goto next buffer",
+    -- },
+    --
+    -- ["<S-Tab>"] = {
+    --   function()
+    --     require("core.utils").tabuflinePrev()
+    --   end,
+    --   "goto prev buffer",
+    -- },
+    --
     -- pick buffers via numbers
     ["<Bslash>"] = { "<cmd> TbufPick <CR>", "Pick buffer" },
   },
