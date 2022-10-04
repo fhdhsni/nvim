@@ -99,7 +99,8 @@ local plugins = {
     config = function()
       require("plugins.configs.others").gitsigns()
     end,
-  },
+   },
+  ["tpope/vim-fugitive"] = {},
 
   -- lsp stuff
   ["williamboman/mason.nvim"] = {
