@@ -19,7 +19,7 @@ M.ui = {
   },
   changed_themes = {},
   theme_toggle = { "onedark", "one_light" },
-  theme = "tokyonight", -- default theme
+  theme = "nord", -- default theme
   transparency = false,
 }
 
