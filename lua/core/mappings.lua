@@ -81,8 +81,12 @@ M.general = {
     },
     ["*"] = {
       "*<C-o>",
-      "highlight current word"
-    }
+      "highlight current word",
+    },
+    ["<leader>gg"] = {
+      "<cmd>:Git<CR>",
+      "git",
+    },
   },
 
   t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
