@@ -19,7 +19,7 @@ M.ui = {
   },
   changed_themes = {},
   theme_toggle = { "onedark", "one_light" },
-  theme = "nord", -- default theme
+  theme = "catppuccin", -- default theme
   transparency = false,
 }
 
