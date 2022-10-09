@@ -99,7 +99,7 @@ local plugins = {
     config = function()
       require("plugins.configs.others").gitsigns()
     end,
-   },
+  },
   ["tpope/vim-fugitive"] = {},
 
   -- lsp stuff
@@ -311,6 +311,14 @@ local plugins = {
         -- Please PR commonly ignored filetypes
         ignore_filetypes = { "NvimTree", "TelescopePrompt" },
       }
+    end,
+  },
+  ["catppuccin/nvim"] = {
+    as = "catppuccin",
+    config = function()
+      vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+      require("catppuccin").setup()
+      vim.api.nvim_command "colorscheme catppuccin"
     end,
   },
 }
