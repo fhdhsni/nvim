@@ -64,9 +64,10 @@ M.general = {
 
     -- close buffer + hide terminal buffer
     ["<leader>x"] = {
-      function()
-        require("core.utils").close_buffer()
-      end,
+      -- function()
+      --   require("core.utils").close_buffer()
+      -- end,
+      "<cmd>:q<CR>",
       "close buffer",
     },
     ["<leader>tt"] = {
