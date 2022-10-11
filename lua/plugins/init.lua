@@ -316,11 +316,18 @@ local plugins = {
   ["catppuccin/nvim"] = {
     as = "catppuccin",
     config = function()
-      vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-      require("catppuccin").setup()
-      vim.api.nvim_command "colorscheme catppuccin"
+      -- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+      -- require("catppuccin").setup()
+      -- vim.api.nvim_command "colorscheme catppuccin"
     end,
   },
+  ["EdenEast/nightfox.nvim"] = {
+    config = function()
+      -- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+      -- require("catppuccin").setup()
+      vim.api.nvim_command "colorscheme nightfox"
+    end,
+  }
 }
 
 -- Load all plugins
