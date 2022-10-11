@@ -19,6 +19,7 @@ M.general = {
     ["<C-k>"] = { "<Up>", "move up" },
     ["<C-c>"] = { "<ESC>", "normal mode" },
     ["<C-s>"] = { "<ESC>:w<CR>l", "save in insert mode" },
+    ["jj"] = { "<ESC>", "normal mode" },
   },
 
   n = {
@@ -88,6 +89,7 @@ M.general = {
       "<cmd>:Git<CR>",
       "git",
     },
+    ["<leader>s"] = { "<cmd>:w<CR>", "save in insert mode" },
   },
 
   t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
@@ -469,42 +471,42 @@ M.harpoon = {
   plugin = true,
 
   n = {
-    ["<leader>ss"] = {
-      function()
-        require("harpoon.ui").toggle_quick_menu()
-      end,
-      "Harpoon menu",
-    },
-    ["<leader>sa"] = {
-      function()
-        require("harpoon.mark").add_file()
-      end,
-      "Harpoon menu",
-    },
-    ["<leader>sj"] = {
-      function()
-        require("harpoon.ui").nav_file(1)
-      end,
-      "Harpoon menu",
-    },
-    ["<leader>sk"] = {
-      function()
-        require("harpoon.ui").nav_file(2)
-      end,
-      "Harpoon menu",
-    },
-    ["<leader>sl"] = {
-      function()
-        require("harpoon.ui").nav_file(3)
-      end,
-      "Harpoon menu",
-    },
-    ["<leader>s;"] = {
-      function()
-        require("harpoon.ui").nav_file(4)
-      end,
-      "Harpoon menu",
-    },
+    -- ["<leader>ss"] = {
+    --   function()
+    --     require("harpoon.ui").toggle_quick_menu()
+    --   end,
+    --   "Harpoon menu",
+    -- },
+    -- ["<leader>sa"] = {
+    --   function()
+    --     require("harpoon.mark").add_file()
+    --   end,
+    --   "Harpoon menu",
+    -- },
+    -- ["<leader>sj"] = {
+    --   function()
+    --     require("harpoon.ui").nav_file(1)
+    --   end,
+    --   "Harpoon menu",
+    -- },
+    -- ["<leader>sk"] = {
+    --   function()
+    --     require("harpoon.ui").nav_file(2)
+    --   end,
+    --   "Harpoon menu",
+    -- },
+    -- ["<leader>sl"] = {
+    --   function()
+    --     require("harpoon.ui").nav_file(3)
+    --   end,
+    --   "Harpoon menu",
+    -- },
+    -- ["<leader>s;"] = {
+    --   function()
+    --     require("harpoon.ui").nav_file(4)
+    --   end,
+    --   "Harpoon menu",
+    -- },
   },
 }
 
