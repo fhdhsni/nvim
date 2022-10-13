@@ -99,6 +99,8 @@ M.general = {
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
     -- ["J"] = {"<cmd> m '>+1<CR>gv=gv", "move up"},
     -- ["K"] = {"<cmd> m '<-2<CR>gv=gv", "move down"},
+    ["<"] = { "<gv", "indent left" },
+    [">"] = { ">gv", "indent right" },
   },
 
   x = {
