@@ -60,7 +60,7 @@ local options = {
 
   pickers = {
     buffers = {
-      sort_lastused = true,
+      -- sort_lastused = true,
     },
   },
   extensions_list = { "themes", "terms", "fzf" },
