@@ -24,6 +24,7 @@ M.general = {
 
   n = {
     ["<ESC>"] = { "<cmd> noh <CR>", "no highlight" },
+    ["<leader>d"] = { "<cmd> noh <CR>", "no highlight" },
 
     -- switch between windows
     ["<C-h>"] = { "<C-w>h", "window left" },
