@@ -45,13 +45,6 @@ M.general = {
     -- update nvchad
     ["<leader>uu"] = { "<cmd> :NvChadUpdate <CR>", "update nvchad" },
 
-    -- ["<leader>tt"] = {
-    --   function()
-    --     require("base46").toggle_theme()
-    --   end,
-    --   "toggle theme",
-    -- },
-
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
     -- empty mode is same as using <cmd> :map
@@ -78,7 +71,7 @@ M.general = {
       end,
       "hide tabline",
     },
-    ["<leader>pf"] = {
+    ["<leader>fj"] = {
       "<C-^>",
       "alternative file",
     },
@@ -90,7 +83,8 @@ M.general = {
       "<cmd>:Git<CR>",
       "git",
     },
-    ["<leader>s"] = { "<cmd>:w<CR>", "save in insert mode" },
+    ["<leader>s"] = { "<cmd>:w<CR>", "save file" },
+    ["<leader>pd"] = {"<cmd>:pu<CR>", "paste down"}
   },
 
   t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
@@ -412,12 +406,12 @@ M.nvterm = {
 
     -- new
 
-    ["<leader>h"] = {
-      function()
-        require("nvterm.terminal").new "horizontal"
-      end,
-      "new horizontal term",
-    },
+    -- ["<leader>h"] = {
+    --   function()
+    --     require("nvterm.terminal").new "horizontal"
+    --   end,
+    --   "new horizontal term",
+    -- },
 
     ["<leader>v"] = {
       function()
@@ -474,42 +468,42 @@ M.harpoon = {
   plugin = true,
 
   n = {
-    -- ["<leader>ss"] = {
-    --   function()
-    --     require("harpoon.ui").toggle_quick_menu()
-    --   end,
-    --   "Harpoon menu",
-    -- },
-    -- ["<leader>sa"] = {
-    --   function()
-    --     require("harpoon.mark").add_file()
-    --   end,
-    --   "Harpoon menu",
-    -- },
-    -- ["<leader>sj"] = {
-    --   function()
-    --     require("harpoon.ui").nav_file(1)
-    --   end,
-    --   "Harpoon menu",
-    -- },
-    -- ["<leader>sk"] = {
-    --   function()
-    --     require("harpoon.ui").nav_file(2)
-    --   end,
-    --   "Harpoon menu",
-    -- },
-    -- ["<leader>sl"] = {
-    --   function()
-    --     require("harpoon.ui").nav_file(3)
-    --   end,
-    --   "Harpoon menu",
-    -- },
-    -- ["<leader>s;"] = {
-    --   function()
-    --     require("harpoon.ui").nav_file(4)
-    --   end,
-    --   "Harpoon menu",
-    -- },
+    ["<leader>hs"] = {
+      function()
+        require("harpoon.ui").toggle_quick_menu()
+      end,
+      "Harpoon menu",
+    },
+    ["<leader>ha"] = {
+      function()
+        require("harpoon.mark").add_file()
+      end,
+      "Harpoon add file",
+    },
+    ["<leader>hj"] = {
+      function()
+        require("harpoon.ui").nav_file(1)
+      end,
+      "Harpoon nav file 1",
+    },
+    ["<leader>hk"] = {
+      function()
+        require("harpoon.ui").nav_file(2)
+      end,
+      "Harpoon nav file 2",
+    },
+    ["<leader>hl"] = {
+      function()
+        require("harpoon.ui").nav_file(3)
+      end,
+      "Harpoon nav file 3",
+    },
+    ["<leader>h;"] = {
+      function()
+        require("harpoon.ui").nav_file(4)
+      end,
+      "Harpoon nav file 4",
+    },
   },
 }
 
