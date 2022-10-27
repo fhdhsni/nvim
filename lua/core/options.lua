@@ -50,7 +50,7 @@ opt.termguicolors = true
 opt.timeoutlen = 400
 opt.undofile = true
 opt.guicursor = ""
-vim.opt.guifont = { "Hack Nerd Font Mono", ":h16" }
+vim.opt.guifont = { "Hack Nerd Font Mono", ":h15" }
 
 
 -- interval for writing swap file to disk, also used by gitsigns

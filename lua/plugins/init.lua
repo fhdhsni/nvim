@@ -290,7 +290,7 @@ local plugins = {
         colors = {
           copy = "#f5c359",
           delete = "#c75c6a",
-          insert = "#78ccc5",
+          insert = "#f7acc5",
           visual = "#9745be",
         },
 
@@ -326,6 +326,21 @@ local plugins = {
       -- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
       -- require("catppuccin").setup()
       vim.api.nvim_command "colorscheme nightfox"
+    end,
+  },
+  ["nvim-neorg/neorg"] = {
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require('neorg').setup {
+          load = {
+              ["core.defaults"] = {}
+          }
+      }
+    end
+  },
+  [ "max397574/better-escape.nvim" ] = {
+    config = function()
+      require("better_escape").setup()
     end,
   }
 }
