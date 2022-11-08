@@ -226,7 +226,7 @@ local plugins = {
       local sources = {
 
         -- webdev stuff
-        b.formatting.deno_fmt,
+        -- b.formatting.deno_fmt,
         b.formatting.prettier,
 
         -- Lua

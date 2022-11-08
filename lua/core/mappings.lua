@@ -84,7 +84,9 @@ M.general = {
       "git",
     },
     ["<leader>s"] = { "<cmd>:w<CR>", "save file" },
-    ["<leader>pd"] = {"<cmd>:pu<CR>", "paste down"}
+    ["<leader>pd"] = {"<cmd>:pu<CR>", "paste down"},
+    ["<leader>O"] = {"O<ESC>", "create empty line above"},
+    ["<leader>o"] = {"o<ESC>", "create empty line below"}
   },
 
   t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
@@ -314,8 +316,8 @@ M.telescope = {
         require("telescope.builtin").live_grep {
           search_dirs = { vim.fn.expand "%:p" },
           path_display = "hidden",
-          layout_strategy = "vertical",
-          layout_config = { height = 0.9, width = 0.75, prompt_position = "bottom", preview_cutoff = 40 },
+          -- layout_strategy = "vertical",
+          -- layout_config = { height = 0.9, width = 0.75, prompt_position = "bottom", preview_cutoff = 40 },
         }
       end,
       "grep current file",
