@@ -42,7 +42,7 @@ local options = {
     file_sorter = require("telescope.sorters").get_fuzzy_file,
     file_ignore_patterns = { "node_modules" },
     generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-    path_display = { "smart" },
+    path_display = { "tail" },
     winblend = 0,
     border = {},
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
@@ -60,13 +60,18 @@ local options = {
 
   pickers = {
     buffers = {
-      -- sort_lastused = true,
+      sort_mru = true,
+      ignore_current_buffer = true,
+      previewer = false,
+    },
+    find_files = {
+      previewer = false,
     },
   },
   extensions_list = { "themes", "terms", "fzf" },
   extensions = {
     fzf = {
-      fuzzy = true, -- false will only do exact matching
+      fuzzy = false, -- false will only do exact matching
       override_generic_sorter = true, -- override the generic sorter
       override_file_sorter = true, -- override the file sorter
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"

@@ -33,6 +33,9 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = "a"
 
+
+opt.foldmethod = "syntax"
+
 -- Numbers
 opt.number = true
 opt.relativenumber = true

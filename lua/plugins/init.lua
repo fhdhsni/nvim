@@ -252,7 +252,7 @@ local plugins = {
               buffer = bufnr,
               callback = function()
                 -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                vim.lsp.buf.formatting_sync()
+                vim.lsp.buf.format { bufnr = bufnr }
               end,
             })
           end
@@ -290,12 +290,12 @@ local plugins = {
         colors = {
           copy = "#f5c359",
           delete = "#c75c6a",
-          insert = "#f7acc5",
+          insert = "#00afff",
           visual = "#9745be",
         },
 
         -- Set opacity for cursorline and number background
-        line_opacity = 0.15,
+        line_opacity = 0.05,
 
         -- Enable cursor highlights
         set_cursor = false,
@@ -313,14 +313,6 @@ local plugins = {
       }
     end,
   },
-  ["catppuccin/nvim"] = {
-    as = "catppuccin",
-    config = function()
-      -- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-      -- require("catppuccin").setup()
-      -- vim.api.nvim_command "colorscheme catppuccin"
-    end,
-  },
   ["EdenEast/nightfox.nvim"] = {
     config = function()
       -- vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
@@ -331,18 +323,31 @@ local plugins = {
   ["nvim-neorg/neorg"] = {
     requires = "nvim-lua/plenary.nvim",
     config = function()
-      require('neorg').setup {
-          load = {
-              ["core.defaults"] = {}
-          }
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {},
+        },
       }
-    end
+    end,
   },
-  [ "max397574/better-escape.nvim" ] = {
+  ["max397574/better-escape.nvim"] = {
     config = function()
       require("better_escape").setup()
     end,
-  }
+  },
+  ["mg979/vim-visual-multi"] = {},
+  ["kevinhwang91/nvim-bqf"] = {},
+  ["junegunn/fzf"] = {
+    run = function()
+      vim.fn["fzf#install"]()
+    end,
+  },
+  ["LukasPietzschmann/telescope-tabs"] = {
+    requires = { "nvim-telescope/telescope.nvim" },
+  },
+  ["pantharshit00/vim-prisma"] = {},
+  ["folke/neodev.nvim"] = {},
+  -- ["Dkendal/nvim-treeclimber"] = {},
 }
 
 -- Load all plugins

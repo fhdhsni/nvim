@@ -16,6 +16,7 @@ local options = {
     "javascript",
     "json",
     "elixir",
+    "rust",
   },
 
   highlight = {

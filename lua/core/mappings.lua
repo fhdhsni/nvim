@@ -13,13 +13,10 @@ M.general = {
     ["<C-e>"] = { "<End>", "end of line" },
 
     -- navigate within insert mode
-    ["<C-h>"] = { "<Left>", "move left" },
-    ["<C-l>"] = { "<Right>", "move right" },
-    ["<C-j>"] = { "<Down>", "move down" },
-    ["<C-k>"] = { "<Up>", "move up" },
     ["<C-c>"] = { "<ESC>", "normal mode" },
+    ["<C-g>"] = { "<ESC>", "normal mode" },
     ["<C-s>"] = { "<ESC>:w<CR>l", "save in insert mode" },
-    ["jj"] = { "<ESC>", "normal mode" },
+    -- ["jj"] = { "<ESC>", "normal mode" },
   },
 
   n = {
@@ -98,6 +95,7 @@ M.general = {
     -- ["K"] = {"<cmd> m '<-2<CR>gv=gv", "move down"},
     ["<"] = { "<gv", "indent left" },
     [">"] = { ">gv", "indent right" },
+    ["<C-g>"] = { "<ESC>", "normal mode" },
   },
 
   x = {
@@ -306,6 +304,8 @@ M.telescope = {
 
   n = {
     -- find
+    ["<leader>tr"] = { "<cmd> Telescope resume<CR>", "Telescope" },
+    ["<leader>tl"] = { "<cmd> Telescope <CR>", "Telescope" },
     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
     ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
