@@ -81,9 +81,9 @@ M.general = {
       "git",
     },
     ["<leader>s"] = { "<cmd>:w<CR>", "save file" },
-    ["<leader>pd"] = {"<cmd>:pu<CR>", "paste down"},
-    ["<leader>O"] = {"O<ESC>", "create empty line above"},
-    ["<leader>o"] = {"o<ESC>", "create empty line below"}
+    ["<leader>pd"] = { "<cmd>:pu<CR>", "paste down" },
+    ["<leader>O"] = { "O<ESC>", "create empty line above" },
+    ["<leader>o"] = { "o<ESC>", "create empty line below" },
   },
 
   t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
@@ -360,14 +360,6 @@ M.nvterm = {
   plugin = true,
 
   t = {
-    -- toggle in terminal mode
-    ["<C-i>"] = {
-      function()
-        require("nvterm.terminal").toggle "float"
-      end,
-      "toggle floating term",
-    },
-
     ["<A-h>"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
@@ -405,15 +397,6 @@ M.nvterm = {
       end,
       "toggle vertical term",
     },
-
-    -- new
-
-    -- ["<leader>h"] = {
-    --   function()
-    --     require("nvterm.terminal").new "horizontal"
-    --   end,
-    --   "new horizontal term",
-    -- },
 
     ["<leader>v"] = {
       function()

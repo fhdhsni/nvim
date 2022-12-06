@@ -290,12 +290,12 @@ local plugins = {
         colors = {
           copy = "#f5c359",
           delete = "#c75c6a",
-          insert = "#00afff",
+          insert = "#2cbfc9",
           visual = "#9745be",
         },
 
         -- Set opacity for cursorline and number background
-        line_opacity = 0.05,
+        line_opacity = 0.15,
 
         -- Enable cursor highlights
         set_cursor = false,
@@ -347,7 +347,6 @@ local plugins = {
   },
   ["pantharshit00/vim-prisma"] = {},
   ["folke/neodev.nvim"] = {},
-  -- ["Dkendal/nvim-treeclimber"] = {},
 }
 
 -- Load all plugins
