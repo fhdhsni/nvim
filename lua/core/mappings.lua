@@ -73,7 +73,7 @@ M.general = {
       "alternative file",
     },
     ["*"] = {
-      "*<C-o>",
+      "m`*``",
       "highlight current word",
     },
     ["<leader>gg"] = {
@@ -82,8 +82,8 @@ M.general = {
     },
     ["<leader>s"] = { "<cmd>:w<CR>", "save file" },
     ["<leader>pd"] = { "<cmd>:pu<CR>", "paste down" },
-    ["<leader>O"] = { "O<ESC>", "create empty line above" },
-    ["<leader>o"] = { "o<ESC>", "create empty line below" },
+    ["<leader>O"] = { "m`O<ESC>``", "create empty line above" },
+    ["<leader>o"] = { "m`o<ESC>``", "create empty line below" },
   },
 
   t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },

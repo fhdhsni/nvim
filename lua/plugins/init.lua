@@ -347,6 +347,11 @@ local plugins = {
   },
   ["pantharshit00/vim-prisma"] = {},
   ["folke/neodev.nvim"] = {},
+  ["mbbill/undotree"] = {
+    config = function()
+      vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle)
+    end,
+  },
 }
 
 -- Load all plugins
